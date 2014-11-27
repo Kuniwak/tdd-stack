@@ -35,4 +35,16 @@ subtest "push twice" => sub {
     ok(!$stack->is_empty, "after inserted");
 };
 
+subtest "pop" => sub {
+    my $stack = TDD::Stack->new();
+    my $element = "hoge";
+    $stack->s_push($element);
+
+    my $poped = $stack->s_pop;
+
+    is($poped, $element, "poped elem is same as pushed");
+    ok($stack->is_empty, "nothing there");
+};
+
+
 done_testing;

@@ -21,4 +21,10 @@ sub s_push {
     push @{$self->{_stack}}, $element;
     return 1;
 }
+
+sub s_pop {
+    my $self = shift;
+    return pop @{$self->{_stack}};
+}
+
 1;
